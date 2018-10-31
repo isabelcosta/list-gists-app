@@ -1,0 +1,53 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Versions.compileSdkVersion
+    buildToolsVersion Versions.buildToolsVersion
+    defaultConfig {
+        applicationId "com.isabelcmdcosta.listgists"
+        minSdkVersion Versions.minSdkVersion
+        targetSdkVersion Versions.targetSdkVersion
+        versionCode Versions.versionCode
+        versionName Versions.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    androidExtensions {
+        experimental = true
+    }
+//    packagingOptions {
+//        exclude 'META-INF/proguard/androidx-annotations.pro'
+//    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation Dependencies.kotlin_stdlib
+    implementation Dependencies.appcompat_v7
+    implementation Dependencies.design
+    implementation Dependencies.constraint_layout
+    testImplementation Dependencies.junit
+    androidTestImplementation Dependencies.test_runner
+    androidTestImplementation Dependencies.espresso
+    implementation Dependencies.rx_java
+    implementation Dependencies.rx_android
+    implementation Dependencies.rx_kotlin
+    implementation Dependencies.retrofit
+    implementation Dependencies.retrofit_gson_converter
+    implementation Dependencies.retrofit_rxjava2_adapter
+    implementation Dependencies.okhttp3_logging_interceptor
+    implementation Dependencies.room_runtime
+    implementation Dependencies.room_rxjava
+    kapt Dependencies.room_compiler
+    implementation Dependencies.lifecycle_extensions
+}
