@@ -4,7 +4,7 @@
 
 Android App that lists public gists.
 
-I did this as a part of a technical challenge in 24h. I ended up learning a bit about how to use Room, and got to play more with RxJava.
+I did this as a part of a technical challenge in 24h. I ended up learning a bit about how to use Room, play more with RxJava and practise Kotlin.
 This is not complete.
 
 This is a sample project now :)
